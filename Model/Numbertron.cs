@@ -13,7 +13,7 @@ namespace Model
 
         public void Generate()
         {
-            int d = ran.Next(100);
+            int d = ran.Next();
             NewNumber?.Invoke(this, d);
         }
     }
