@@ -10,8 +10,7 @@ namespace Model
     {
         public static bool IsEven(this int i)
         {
-            if (i % 2 == 0) return true;
-            return false;
+            return i % 2 == 0;
         }
     }
 }

@@ -8,9 +8,7 @@ using Model;
 namespace View
 {
     class Program
-    { 
-        private static Jay _jay = new Jay();
-        private static SilentBob _bob = new SilentBob();
+    {        
 
         static void Main(string[] args)
         {
@@ -25,24 +23,24 @@ namespace View
                 s = Console.ReadLine();
             }
 
-            num.NewNumber += OnNewNumber;
+            var jay = new Jay();
+            var bob = new SilentBob();
+
+            num.NewNumber += jay.FetchNewNumber;
+            num.NewNumber += bob.FetchNewNumber;
 
             for (int i = 0; i < n; i++)
             {
-                num.Generate();
+                num.Generate();                
             }
             
-            if (_jay.Score > _bob.Score) Console.WriteLine(_jay.Name);
-            else if (_jay.Score < _bob.Score) Console.WriteLine(_bob.Name);
+            if (jay.Score > bob.Score) Console.WriteLine(jay.Name);
+            else if (jay.Score < bob.Score) Console.WriteLine(bob.Name);
             else Console.WriteLine("DRAW");
 
             Console.ReadKey();
         }
 
-        public static void OnNewNumber(object sender, int d)
-        {
-            _jay.FetchNewNumber(d);
-            _bob.FetchNewNumber(d);
-        }
+       
     }
 }

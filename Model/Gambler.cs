@@ -16,6 +16,6 @@ namespace Model
             Name = name;
         }
 
-        public abstract void FetchNewNumber(int digital);
+        public abstract void FetchNewNumber(object sender, int digital);
     }
 }

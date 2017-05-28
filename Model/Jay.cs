@@ -13,7 +13,7 @@ namespace Model
             
         }
 
-        public override void FetchNewNumber(int digital)
+        public override void FetchNewNumber(object sender, int digital)
         {
             if (digital.IsEven()) Score++;
         }
